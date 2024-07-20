@@ -1,14 +1,19 @@
 package application;
 
+import javax.swing.UIClientPropertyKey;
+
+import boardgame.Board;
 import boardgame.Position;
+import chess.ChessMath;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-		Position position = new Position(2, 5);
+		ChessMath chessMath =new ChessMath();
 		
-		System.out.println(position);
+		UI.printBoard(chessMath.getPieces());
+	
 	}
 
 }
