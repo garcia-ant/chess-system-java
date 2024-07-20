@@ -2,21 +2,17 @@ package chess;
 
 import boardgame.Board;
 import boardgame.Piece;
-import boardgame.Position;
 
-public class chessPiece extends Piece {
-	
-	private Color color;
+public class ChessPiece extends Piece {
 
-	public chessPiece(Position postion, Board board, Color color) {
-		super(postion, board);
-		this.color = color;
-	}
+    private Color color;
 
-	public Color getColor() {
-		return color;
-	}
+    public ChessPiece(Board board, Color color) {
+        super(board);
+        this.color = color;
+    }
 
-	
-
+    public Color getColor() {
+        return color;
+    }
 }
