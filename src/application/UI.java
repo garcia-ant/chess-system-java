@@ -11,6 +11,7 @@ public class UI {
 
 	// https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
 
+<<<<<<< HEAD
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_BLACK = "\u001B[30m";
 	public static final String ANSI_RED = "\u001B[31m";
@@ -20,6 +21,18 @@ public class UI {
 	public static final String ANSI_PURPLE = "\u001B[35m";
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_WHITE = "\u001B[37m";
+=======
+        for (int i = 0; i < pieces.length; i++) {
+            System.out.print((8 - i) + " ");
+            for (int k = 0; k < pieces[i].length; k++) {
+                printPiece(pieces[i][k]);
+                System.out.print(" "); // Adiciona espaço entre as peças
+            }
+            System.out.println();
+        }
+        System.out.println("  a b c d e f g h");
+    }
+>>>>>>> f108f313786430bbe35fb6bd62ec85afbc2f9b09
 
 	public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
 	public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
