@@ -5,9 +5,9 @@ import boardgame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
-public class Bishop extends ChessPiece {
+public class Queen extends ChessPiece {
 
-    public Bishop(Board board, Color color) {
+    public Queen(Board board, Color color) {
         super(board, color);
     }
 
@@ -21,14 +21,44 @@ public class Bishop extends ChessPiece {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
         Position p = new Position(0, 0);
 
-        // Northwest (NW)
-        p.setValues(position.getRow() - 1, position.getColumn() - 1);
+        // Up
+        p.setValues(position.getRow() - 1, position.getColumn());
         while (getBoard().positionExists(p) && canMove(p)) {
             mat[p.getRow()][p.getColumn()] = true;
             if (getBoard().piece(p) != null && ((ChessPiece) getBoard().piece(p)).getColor() != getColor()) {
                 break;
             }
-            p.setValues(p.getRow() - 1, p.getColumn() - 1);
+            p.setRow(p.getRow() - 1);
+        }
+
+        // Down
+        p.setValues(position.getRow() + 1, position.getColumn());
+        while (getBoard().positionExists(p) && canMove(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+            if (getBoard().piece(p) != null && ((ChessPiece) getBoard().piece(p)).getColor() != getColor()) {
+                break;
+            }
+            p.setRow(p.getRow() + 1);
+        }
+
+        // Left
+        p.setValues(position.getRow(), position.getColumn() - 1);
+        while (getBoard().positionExists(p) && canMove(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+            if (getBoard().piece(p) != null && ((ChessPiece) getBoard().piece(p)).getColor() != getColor()) {
+                break;
+            }
+            p.setColumn(p.getColumn() - 1);
+        }
+
+        // Right
+        p.setValues(position.getRow(), position.getColumn() + 1);
+        while (getBoard().positionExists(p) && canMove(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+            if (getBoard().piece(p) != null && ((ChessPiece) getBoard().piece(p)).getColor() != getColor()) {
+                break;
+            }
+            p.setColumn(p.getColumn() + 1);
         }
 
         // Northeast (NE)
@@ -61,11 +91,21 @@ public class Bishop extends ChessPiece {
             p.setValues(p.getRow() + 1, p.getColumn() - 1);
         }
 
+        // Northwest (NW)
+        p.setValues(position.getRow() - 1, position.getColumn() - 1);
+        while (getBoard().positionExists(p) && canMove(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+            if (getBoard().piece(p) != null && ((ChessPiece) getBoard().piece(p)).getColor() != getColor()) {
+                break;
+            }
+            p.setValues(p.getRow() - 1, p.getColumn() - 1);
+        }
+
         return mat;
     }
 
     @Override
     public String toString() {
-        return "B";
+        return "Q";
     }
 }
