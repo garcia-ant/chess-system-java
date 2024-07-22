@@ -8,6 +8,7 @@ import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
 import chess_pieces.King;
+import chess_pieces.Pawn;
 import chess_pieces.Rook;
 
 public class ChessMath {
@@ -202,11 +203,29 @@ public class ChessMath {
 
     private void initialSetup() {
         // Setup the initial pieces on the board
-        placeNewPiece('h', 7, new Rook(board, Color.WHITE));
-        placeNewPiece('d', 1, new Rook(board, Color.WHITE));
+    
+        // Torres brancas
+        placeNewPiece('a', 1, new Rook(board, Color.WHITE));
+        placeNewPiece('h', 1, new Rook(board, Color.WHITE));
+        
+        // Rei branco
         placeNewPiece('e', 1, new King(board, Color.WHITE));
         
-        placeNewPiece('b', 8, new Rook(board, Color.BLACK));
-        placeNewPiece('a', 8, new King(board, Color.BLACK));
+        // Peões brancos
+        for (char i = 'a'; i <= 'h'; i++) {
+            placeNewPiece(i, 2, new Pawn(board, Color.WHITE));
+        }
+
+        // Torres pretas
+        placeNewPiece('a', 8, new Rook(board, Color.BLACK));
+        placeNewPiece('h', 8, new Rook(board, Color.BLACK));
+        
+        // Rei preto
+        placeNewPiece('e', 8, new King(board, Color.BLACK));
+        
+        // Peões pretos
+        for (char i = 'a'; i <= 'h'; i++) {
+            placeNewPiece(i, 7, new Pawn(board, Color.BLACK));
+        }
     }
 }
