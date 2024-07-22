@@ -9,6 +9,7 @@ import boardgame.Piece;
 import boardgame.Position;
 import chess_pieces.Bishop;
 import chess_pieces.King;
+import chess_pieces.Knigth;
 import chess_pieces.Pawn;
 import chess_pieces.Rook;
 
@@ -207,9 +208,11 @@ public class ChessMath {
     
         // Torres brancas
         placeNewPiece('a', 1, new Rook(board, Color.WHITE));
+        placeNewPiece('b', 1, new Knigth(board, Color.WHITE));
         placeNewPiece('c', 1, new Bishop(board, Color.WHITE));
         placeNewPiece('h', 1, new Rook(board, Color.WHITE));
         placeNewPiece('f', 1, new Bishop(board, Color.WHITE));
+        placeNewPiece('g', 1, new Knigth(board, Color.WHITE));
         // Rei branco
         placeNewPiece('e', 1, new King(board, Color.WHITE));
         
@@ -220,9 +223,11 @@ public class ChessMath {
 
         // Torres pretas
         placeNewPiece('a', 8, new Rook(board, Color.BLACK));
+        placeNewPiece('b', 8, new Knigth(board, Color.BLACK));
         placeNewPiece('c', 8, new Bishop(board, Color.BLACK));
         placeNewPiece('f', 8, new Bishop(board, Color.BLACK));
         placeNewPiece('h', 8, new Rook(board, Color.BLACK));
+        placeNewPiece('g', 8, new Knigth(board, Color.BLACK));
         
         // Rei preto
         placeNewPiece('e', 8, new King(board, Color.BLACK));
